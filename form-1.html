@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<body>
+姓名:<input type="text" name="username" id="user">
+密码:<input type="password" name="password" id="pass">
+<button id="btn">提交</button>
+<p id="text"></p>
+
+<script type="text/javascript">
+    $(function(){
+        $("#btn").click(function(){
+            $.ajax({
+                url:"http://127.0.0.1:3000",
+                type:"get",
+                dataType:"jsonp",
+                jsonpCallback:"showdata",
+                data:{
+                    username:$("#user").val(),
+                    password:$("#pass").val()
+                }
+            }).done(function(result){
+                console.log(result)
+            })
+        })
+        function showdata(data){
+            console.log(data);
+            var _data = JSON.stringify(data);
+            $("#text").html(_data)
+        }
+    })
+</script>
+
+</body>
+</html>
