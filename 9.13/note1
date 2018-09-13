@@ -1,0 +1,19 @@
+npm init 项目初始化  -y 默认所有设置
+npm install  --save = s   install = i
+npm install  --save-dev = -D
+后台返回的数据对象 如果key 是数字例如  {“0”：“哈啊哈”}req.parms[0]
+学习模板引擎
+art-template
+
+ejs
+
+jade
+
+node框架
+express
+
+koa2
+
+
+
+
